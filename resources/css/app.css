@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.modal-layout {
+    @apply w-full h-screen bg-white/95 fixed top-0 left-0 z-[99999] lg:p-5 p-2 overflow-y-auto;
+}
