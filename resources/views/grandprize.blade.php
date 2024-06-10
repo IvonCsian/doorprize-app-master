@@ -86,7 +86,7 @@
                     </div>
                 </section>
 
-                <section class="bg-gray-300 dark:bg-gray-900 max-w-4xl border-4 mx-auto mt-48 mb-5 border-gray-800 hidden overflow-y-auto h-screen" id="list-pemenang">
+                <section class="bg-white dark:bg-gray-900 max-w-5xl border-4 mx-auto mt-10 mb-1 border-gray-800 hidden overflow-y-auto h-screen" id="list-pemenang">
                     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-12 space-y-6">
                         <div class="flex justify-between">
                             <h4 class="font-bold">List Pemenang : </h4>

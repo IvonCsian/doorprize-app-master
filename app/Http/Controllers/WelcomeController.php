@@ -48,7 +48,6 @@ class WelcomeController extends Controller
             $penerima->nik = $recipient->nik;
             $penerima->departemen = $recipient->departemen;
             $penerima->bagian = $recipient->bagian;
-            $penerima->status = $recipient->status;
             $penerima->save();
             // Session::put('prize', $prize);
             // Session::put('recipient', $recipient->nama_penerima);
