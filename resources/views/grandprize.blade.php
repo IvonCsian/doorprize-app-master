@@ -48,7 +48,7 @@
                         <a href="{{ route('welcome') }}" class="underline font-bold hover:text-blue-900">Kembali</a>
                     </div>
                     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-12 space-y-6 bg-opacity-50 dark:bg-opacity-50">
-                        <h1 class="mb-10 from-indigo-500 via-purple-500 to-pink-500 text-4xl font-extrabold text-center tracking-tight leading-none text-blue-800 md:text-5xl lg:text-6xl dark:text-white underline decoration-wavy decoration-indigo-500">RANDOM GRANDPRIZE</h1>
+                        <h1 class="mb-10 from-indigo-500 via-purple-500 to-pink-500 text-4xl font-extrabold text-center tracking-tight leading-none text-blue-800 md:text-5xl lg:text-6xl dark:text-white underline decoration-wavy decoration-red-500">HUT RI GRANDPRIZE</h1>
                         <div>
                             <form id="dooprizeForm" class="max-w-full mx-auto space-y-6">
                                 @csrf
@@ -78,15 +78,15 @@
                                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
                                 </svg>
                                 <span class="sr-only">Info</span>
-                                <div>
+                                <div>   
                                     Mohon bersabar pemenangnya adalah...
                                 </div>
-                            </div>
+                            </div>  
                         </div>
                     </div>
                 </section>
 
-                <section class="bg-white dark:bg-gray-900 max-w-5xl border-4 mx-auto mt-10 mb-1 border-gray-800 hidden overflow-y-auto h-screen" id="list-pemenang">
+                <section class="bg-white dark:bg-gray-900 max-w-6xl border-2 mx-auto mt-5 mb-0 border-gray-800 hidden overflow-y-auto h-screen" id="list-pemenang">
                     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-12 space-y-6">
                         <div class="flex justify-between">
                             <h4 class="font-bold">List Pemenang : </h4>
@@ -96,7 +96,8 @@
                                         Kembali
                                     </span>
                                 </button>
-                                <a href="{{ route('export.grandprize') }}"  class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Export</a>
+                                <a href="{{ route('export.grandprize') }}"  class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Excel</a>
+                                <a href="{{ route('gppdf',$data->id) }}"  class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">PDF</a>
                             </div>
 
                         </div>

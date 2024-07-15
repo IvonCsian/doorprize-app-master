@@ -2,9 +2,9 @@
     <div class="flex justify-center mt-[15vh]">
         <div class="text-center space-y-5">
             <div class="text-black">
-                <div class="tenor-gif-embed" style="width: 500px" data-postid="14200716902721776431" data-share-method="host" data-aspect-ratio="1" data-width="450px">
-                    <a href="https://tenor.com/view/dollar-banknote-banknote-making-money-dollars-service-charge-gif-14200716902721776431">
-                        Dollar Banknote Making Money Sticker</a>from <a href="https://tenor.com/search/dollar+banknote-stickers">Dollar Banknote Stickers</a></div>
+                <div class="tenor-gif-embed" style="width: 1000px" data-postid="3588955482528829800" data-share-method="host" data-aspect-ratio="1.53205" data-width="1000px">
+                    <a href="https://tenor.com/view/number-random-randomizer-gif-3588955482528829800">
+                        Number Random GIF</a>from <a href="https://tenor.com/search/number-gifs">Number GIFs</a></div> 
                         <script type="text/javascript" async src="https://tenor.com/embed.js">
                         </script>
                 <h4 class="font-black text-4xl mt-4">Pemenang nya adalah...</h4>

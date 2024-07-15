@@ -150,5 +150,16 @@ class WelcomeController extends Controller
         $penerima = PemenangGrandPrize::latest()->get();
         return view('export-grand',compact('penerima'));
     }
-
+    public function pdfDownload(Request $request)
+    {
+        $data = Penerima::latest();
+        $query = $data->get();
+        return view('pdf',['data' => $query]);
+    }
+    public function gppdfDownload($id)
+    {
+        $data = PemenangGrandPrize::latest();
+        $query = $data->find($id); 
+        return view('gppdf',['data' => $query]);
+    }
 }
