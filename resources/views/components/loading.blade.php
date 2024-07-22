@@ -2,7 +2,7 @@
     <div class="flex justify-center mt-[15vh]">
         <div class="text-center space-y-5">
             <div class="text-black">
-                <div class="tenor-gif-embed" style="width: 1000px" data-postid="3588955482528829800" data-share-method="host" data-aspect-ratio="1.53205" data-width="1000px">
+                <div class="tenor-gif-embed" style="width: 700px" data-postid="3588955482528829800" data-share-method="host" data-aspect-ratio="1.53205" data-width="700px">
                     <a href="https://tenor.com/view/number-random-randomizer-gif-3588955482528829800">
                         Number Random GIF</a>from <a href="https://tenor.com/search/number-gifs">Number GIFs</a></div> 
                         <script type="text/javascript" async src="https://tenor.com/embed.js">

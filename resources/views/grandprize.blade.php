@@ -31,7 +31,7 @@
         </div>
         <div class="mx-auto">
 
-            <section style="background-image: url('{{ asset('img/DSCF2981.jpg') }}')" class="relative h-screen bg-no-repeat bg-center bg-cover bg-fixed overflow-hidden">
+        <section style="background-image: url('{{ asset('img/DSCF2981.jpg') }}')" class="relative h-screen bg-no-repeat bg-cover bg-fixed overflow-hidden">
                 @if (Route::has('login'))
                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                         @auth
@@ -43,7 +43,7 @@
                     </div>
                 @endif
 
-                <section class="bg-gray-300 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 max-w-4xl border-4 mx-auto mt-48 mb-5 border-gray-800" id="form-dooprize">
+                <section class="bg-gray-300 dark:bg-gray-900 bg-opacity-0 dark:bg-opacity-50 max-w-4xl border-1 mx-auto mt-40 mb-5 border-gray-800" id="form-dooprize">
                     <div class="flex justify-end p-5">
                         <a href="{{ route('welcome') }}" class="underline font-bold hover:text-blue-900">Kembali</a>
                     </div>
@@ -97,7 +97,7 @@
                                     </span>
                                 </button>
                                 <a href="{{ route('export.grandprize') }}"  class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Excel</a>
-                                <a href="{{ route('gppdf',$data->id) }}"  class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">PDF</a>
+                                <a href="{{ route('gppdf') }}"  class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">PDF</a>
                             </div>
 
                         </div>

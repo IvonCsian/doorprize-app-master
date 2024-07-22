@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::post('/pick-winners', [WelcomeController::class, 'generateDooprizes'])->name('pick.winners');
 //pdf
-Route::get('/pdf',[WelcomeController::class,'pdfDownload'])->name('pdf');
-Route::get('gppdf/gppdf/{id}',[WelcomeController::class,'gppdfDownload'])->name('gppdf');
+Route::get('/pdf', [WelcomeController::class, 'pdfDownload'])->name('pdf');
+Route::get('/gppdf', [WelcomeController::class, 'gppdfDownload'])->name('gppdf');
 // grandpize
 Route::get('grandprize', [WelcomeController::class, 'grandprize'])->name('grandprize');
 Route::post('/pick-grandprize', [WelcomeController::class, 'generateGrandPrize'])->name('pick.grandprize');

@@ -49,6 +49,7 @@ class WelcomeController extends Controller
             $penerima->departemen = $recipient->departemen;
             $penerima->bagian = $recipient->bagian;
             $penerima->save();
+            $deletDooprize = Dooprize::where('status','grandprize',$prize)->first()->delete();
             // Session::put('prize', $prize);
             // Session::put('recipient', $recipient->nama_penerima);
             $selectedPrizes[] = $prize;
@@ -156,10 +157,10 @@ class WelcomeController extends Controller
         $query = $data->get();
         return view('pdf',['data' => $query]);
     }
-    public function gppdfDownload($id)
+    public function gppdfDownload(Request $request)
     {
         $data = PemenangGrandPrize::latest();
-        $query = $data->find($id); 
+        $query = $data->get();
         return view('gppdf',['data' => $query]);
     }
 }

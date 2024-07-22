@@ -27,7 +27,6 @@
         p, table, ol{
             font-size: 9pt;
         }
-        
 
         @page {
             margin: 0;  /* Ini akan diterapkan ke setiap halaman */
@@ -74,7 +73,7 @@
                 <div class="card" style="border: none">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <h4 class="card-title pt-2 font-weight-bold" style="font-weight: bold">Laporan</h4>
+                            <h4 class="card-title pt-2 font-weight-bold" style="font-weight: bold">List Pemenang Grandprize</h4>
                             <div class="mx-3">
                                 <button onclick="history.back()" class="btn btn-primary btn-icon-text no-print"><i class="ti-angle-left btn-icon-prepend"></i> Kembali</button>
                             </div>
@@ -83,35 +82,38 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered">
+                                <thead>
                                   <tr>
                                     <th>No</th>
-                                    <td>{{$loop->iteration}}</td>
-                                  </tr>
-                                  <tr>
                                     <th>NAK</th>
-                                    <td>{{ ucwords($data->nak) }}</td>
-                                  </tr>
-                                  <tr>
                                     <th>NIK</th>
-                                    <td>{{ ucwords($data->nik) }}</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Nama</th>
-                                    <td>{{ ucwords($data->nama_penerima) }}</td>
-                                  </tr>
-                                  <tr>
+                                    <th>Nama Pemerintah</th>
                                     <th>Departemen</th>
-                                    <td>{{ ucwords($data->departemen) }}</td>
-                                  </tr>
-                                  <tr>
                                     <th>Bagian</th>
-                                    <td>{{ date('d M Y', strtotime($data->tanggal )) }}</td>
+                                    <th>Grandprize</th>
+                                    <th>Tanggal</th>
                                   </tr>
-                                  <tr>
-                                    <th>Hadiah</th>
-                                    <td>{{ ucwords($data->hadiah_pemenang) }}</td>
-                                  </tr>              
+                                </thead>
+                                <tbody>
+                                  @forelse ($data as $item)
+                                      <tr>
+                                          <td>{{ $loop->iteration }}</td>
+                                          <td>{{ ucwords($item->nak) }}</td>
+                                          <td>{{ ucwords($item->nik) }}</td>
+                                          <td>{{ ucwords($item->nama_penerima) }}</td>
+                                          <td>{{ ucwords($item->departemen) }}</td>
+                                          <td>{{ ucwords($item->bagian) }}</td>
+                                          <td>{{ ucwords($item->hadiah_pemenang) }}</td>
+                                          <td>{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y ') }}</td>
+                                      </tr>
+                                  @empty
+                                      <tr>
+                                          <td>Tidak ada data</td>
+                                      </tr>
+                                  @endforelse
+                                </tbody>
                               </table>
+                        </div>
                         </div>
                     </div>
                 </div>
