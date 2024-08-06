@@ -36,7 +36,8 @@ class WelcomeController extends Controller
         //     return 'Tidak ada pemenang';
         // }
         // Get recipients from the database
-        $recipients = Penerima::inRandomOrder()->limit($numberOfPrizes)->get();
+        $current_penerima = PemenangGrandPrize::pluck('nama_penerima')->toArray();
+        $recipients = Penerima::whereNotIn('nama_penerima', $current_penerima)->inRandomOrder()->limit($numberOfPrizes)->get();
         $selectedPrizes = [];
         // Generate random prizes for each recipient
         foreach ($recipients as $recipient) {
@@ -49,7 +50,7 @@ class WelcomeController extends Controller
             $penerima->departemen = $recipient->departemen;
             $penerima->bagian = $recipient->bagian;
             $penerima->save();
-            $deletDooprize = Dooprize::where('status','grandprize',$prize)->first()->delete();
+            Dooprize::where('status','grandprize')->where('name',$prize)->first()->delete();
             // Session::put('prize', $prize);
             // Session::put('recipient', $recipient->nama_penerima);
             $selectedPrizes[] = $prize;
@@ -63,7 +64,6 @@ class WelcomeController extends Controller
                 'status' => $recipient->status,
             ];
         }
-
         return $dooprizes;
     }
     public function generateDooprizes(Request $request)
@@ -131,15 +131,9 @@ class WelcomeController extends Controller
 
     private function generateRandomGrandPrize($selectedPrizes)
     {
-        // Hapus hadiah yang sudah dipilih dari daftar hadiah yang tersedia
+        // Example of possible prizes, modify as needed
         $prizes = Dooprize::where('status','grandprize')->latest()->pluck('name')->toArray();
-        $prizes = array_diff($prizes, $selectedPrizes);
-
-        // Memilih hadiah secara acak dari daftar hadiah yang tersedia
-        $selectedPrize = $prizes[array_rand($prizes)];
-
-        // Mengembalikan hadiah yang dipilih
-        return $selectedPrize;
+        return $prizes[array_rand($prizes)];
 
     }
 
